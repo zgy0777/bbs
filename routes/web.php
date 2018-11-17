@@ -38,3 +38,10 @@ Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 
+
+Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);
+//Route::get('/users/{user}', 'UsersController@show')->name('users.show'); //个人中心视图
+//Route::get('/users/{user}/edit', 'UsersController@edit')->name('users.edit');//用户编辑视图
+//Route::patch('/users/{user}', 'UsersController@update')->name('users.update');//用户资料更新
+
+
