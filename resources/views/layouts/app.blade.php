@@ -9,7 +9,7 @@
     <!-- CSRF Token -->
     {{--便于前端js获取到csrf令牌--}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    {{--如果标题没有定制，即默认是larabbs作为前缀--}}
+    {{--若子模版标题没有定义，即默认是第二个参数作为默认值--}}
     <title>@yield('title', 'LaraBBS') - Laravel</title>
 
     <!-- Styles -->
@@ -19,12 +19,13 @@
 </head>
 
 <body>
+{{--页面样式定制--}}
 <div id="app" class="{{ route_class() }}-page">
 
     @include('layouts._header')
 
     <div class="container">
-        {{-- 引入报错信息 --}}
+        {{-- 引入session.msg --}}
         @include('layouts._message')
         @yield('content')
 
