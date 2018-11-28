@@ -43,6 +43,13 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+                            {{--个人中心入口--}}
+                            <li>
+                                <a href="{{ route('users.show', Auth::id()) }}">
+                                    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                                    个人中心
+                                </a>
+                            </li>
                             {{--添加编辑入口--}}
                             <li>
                                 <a href="{{ route('users.edit', Auth::id()) }}">
