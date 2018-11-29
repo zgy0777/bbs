@@ -43,6 +43,12 @@ class TopicObserver
         }
     }
 
+    public function deleted(Topic $topic)
+    {
+        //模型观察器调用方法时需要db构造器，不要使用orm模型
+        \DB::table('replies')->where('topic_id',$topic->id)->delete();
+
+    }
 
 
 }
