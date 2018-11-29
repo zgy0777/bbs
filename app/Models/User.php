@@ -27,6 +27,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    //一个用户有多条回复
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
+
+
     public function topics()
     {
         return $this->hasMany(Topic::class);

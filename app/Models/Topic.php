@@ -16,6 +16,12 @@ class Topic extends Model
         return $this->belongsTo(Category::class);
     }
 
+    //一个话题有多个回复
+    public function replies()
+    {
+        return $this->hasMany(Reply::class);
+    }
+
 
     //本地作用域
     public function scopeWithOrder($query,$order)
