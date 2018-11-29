@@ -57,6 +57,15 @@
                         </a>
 
                         <ul class="dropdown-menu" role="menu">
+                            {{-- 全局策略register，拥有该策略者才显示区块 --}}
+                            @can('manage_contents')
+                                <li>
+                                    <a href="{{ url(config('administrator.uri')) }}">
+                                        <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
+                                        管理后台
+                                    </a>
+                                </li>
+                            @endcan
                             {{--个人中心入口--}}
                             <li>
                                 <a href="{{ route('users.show', Auth::id()) }}">
