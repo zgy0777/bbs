@@ -9,7 +9,7 @@ return array(
     'domain' => '',
 
     // 应用名称，在页面标题和左上角站点名称处显示
-    'title' => config('app.name'),
+    'title' => env('APP_NAME','LaraBBS'),
 
     // 模型配置信息文件存放目录
     'model_config_path' => config_path('administrator'),
@@ -38,6 +38,7 @@ return array(
      */
     'menu' => [
         '用户与权限' => [
+            //返回对应配置页
             'users',
         ],
     ],
