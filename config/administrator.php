@@ -40,6 +40,8 @@ return array(
         '用户与权限' => [
             //返回对应配置页
             'users',
+            'roles',
+            'permissions',
         ],
     ],
 
